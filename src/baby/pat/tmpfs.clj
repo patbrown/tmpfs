@@ -19,7 +19,7 @@
 (defn-spec tmpfile-naming-fn ::vt/str []
   (str (u/rand-of :colors) "-" (u/rand-of :nationalities) "-" (u/rand-of :greek-alphabet)))
 
-(defprotocol ITempDir
+(defprotocol ITmpDir
     (create [this])
     (destroy [this])
     (archive [this])
@@ -36,7 +36,7 @@
                    (fs/copy-tree @dir (str archive-dir "/" (fs/relativize root (fs/file @dir)))))})
 
 (defrecord TmpDir [id root dir-prefix file-prefix dir files extension archive-with]
-  ITempDir
+  ITmpDir
   (create [{:keys [id] :as this}]
     (when-not (fs/exists? root)
       (fs/create-dirs root))
