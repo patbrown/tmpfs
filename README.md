@@ -18,11 +18,10 @@ baby.pat/tpl {:mvn/version "0.0.2"}
 ## Usage
 
 ```clojure
-(require '[baby.pat.tpl :refer [<-tpl <-tpl-keys render]])
-(render "Hey {{name}}!" {:name "MOMMA"})
-(render "Hey {{name}}!" "resources/my-fav-lady.edn")
-(render "resources/my-template.tpl" "resources/my-fav-lady.edn")
-(def a-tpl (atom "Hey {{name}}!"))
-(<-tpl a-tpl)
-(<-tpl-vars "resources/my-template.tpl")
+(def love (tmpdir->))
+(create love)
+(create-file love)
+(archive love)
+(destroy love)
+
 ```
