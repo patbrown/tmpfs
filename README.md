@@ -13,15 +13,16 @@ The magic comes for a map that defines how the tmpdir behaves. Your map goes on 
 ## Installation
 
 ```clojure
-baby.pat/tpl {:mvn/version "0.0.2"}
+baby.pat/tmpfs {:mvn/version "0.0.2"}
 ```
 ## Usage
 
 ```clojure
-(def love (tmpdir->))
-(create love)
-(create-file love)
-(archive love)
-(destroy love)
+(require '[baby.pat.tmpfs :as tmpfs])
+(def love (tmpfs/tmpdir->))
+(tmpfs/create love)
+(tmpfs/create-file love)
+(tmpfs/archive love)
+(tmpfs/destroy love)
 
 ```
